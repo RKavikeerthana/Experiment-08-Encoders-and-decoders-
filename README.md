@@ -69,6 +69,7 @@ Step-5: End the module.
 
 ### PROGRAM 
 /*
+```py
 Program for Endocers and Decoders  and verify its truth table in quartus using Verilog programming.
 Developed by:R.Kavi Keerthana 
 RegisterNumber: 212222100022
@@ -97,7 +98,7 @@ assign d7 = (a&b&c);
 endmodule
 
 */
-
+```
 
 
 
