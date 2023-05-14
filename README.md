@@ -84,18 +84,23 @@ or (z,d1,d3,d5,d7);
 endmodule 
 
 DECODER
-module decoder(d0,d1,d2,d3,d4,d5,d6,d7,a,b,c);
-input a,b,c;
-output d0,d1,d2,d3,d4,d5,d6,d7;
-assign d0 = (~a&~b&~c);
-assign d1 = (~a&~b&c);
-assign d2 = (~a&b&~c);
-assign d3 = (~a&b&c);
-assign d4 = (a&~b&~c);
-assign d5 = (a&~b&c);
-assign d6 = (a&b&~c);
-assign d7 = (a&b&c);
-endmodule
+
+module decoder (a0,a1,a2,y0,y1,y2,y3,y4,y5,y6,y7);
+input a0,a1,a2;
+output y0,y1,y2,y3,y4,y5,y6,y7;
+wire a0bar,a1bar,a2bar;
+not (a0bar,a0);
+not (a1bar,a1);
+not (a2bar,a2);
+and (y0,a0bar,a1bar,a2bar);
+and (y1,a0bar,a1bar,a2);
+and (y2,a0bar,a1,a2bar);
+and (y3,a0bar,a1,a2);
+and (y4,a0,a1bar,a2bar);
+and (y5,a0,a1bar,a2);
+and (y6,a0,a1,a2bar);
+and (y7,a0,a1,a2);
+endmodul
 
 */
 ```
@@ -105,6 +110,11 @@ endmodule
 
 
 ### RTL LOGIC  
+### ENCODER
+![Screenshot (58)](https://github.com/RKavikeerthana/Experiment-08-Encoders-and-decoders-/assets/120431120/c07c1101-a01e-4f7a-bad0-d91dbd701ceb)
+### DECODER
+![decoder](https://github.com/RKavikeerthana/Experiment-08-Encoders-and-decoders-/assets/120431120/e64118a5-d529-4e74-bf22-f70c8acb4d70)
+
 
 
 
@@ -114,16 +124,23 @@ endmodule
 
 
 ### TIMING DIGRAMS  
+### ENCODER
+![encoder](https://github.com/RKavikeerthana/Experiment-08-Encoders-and-decoders-/assets/120431120/cbaaaa1e-d826-458f-88f9-7d791b9f1555)
 
+
+### DECODER
+![237650647-e751ca1f-650d-46f0-8080-39fa9ca51333](https://github.com/RKavikeerthana/Experiment-08-Encoders-and-decoders-/assets/120431120/d3b932d3-c6fb-41ff-adc4-2d1c08181567)
 
 
 
 
 ### TRUTH TABLE 
+### ENCODER
+![237650962-6876540a-4ff5-4c06-a94f-b260bb40aba3](https://github.com/RKavikeerthana/Experiment-08-Encoders-and-decoders-/assets/120431120/a84b649f-1692-4dc2-8170-255029465639)
+### DECODER
+![237651150-bdcfd9ff-f6aa-4987-9d34-338016ba4fed](https://github.com/RKavikeerthana/Experiment-08-Encoders-and-decoders-/assets/120431120/8f853a47-abf6-4061-ad71-db1abcd29bc2)
 
 
 
-
-
-
-### RESULTS 
+### RESULTS
+Thus the program to desing encoder and decoder is completed.
